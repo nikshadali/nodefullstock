@@ -1,0 +1,12 @@
+
+
+<h2>Serch Authers</h2>
+<form action="/authers" method="GET" enctype="multipart/form-data">
+    <label>Name</label>
+    <input type="text" name="name" value="<%= serachOption.name ? 'serachOption' : '' %>">
+    <button type="submit">Search</button>
+</form>
+<br>
+<% authers.forEach(auther => { %>
+    <div><%= auther.name %> </div>
+    <% }) %>

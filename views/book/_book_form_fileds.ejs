@@ -1,0 +1,30 @@
+<div><label>Title</label>
+<input type="text" name = "title" value="<%= book.title %>"></div><br>
+<div>
+<label>Auther</label>
+<select name="auther">
+<% authers.forEach(auther => { %>
+<% if(auther.id === book.auther){ %>
+    <option selected label="<%= auther.name %>" value="<%= auther.id %>">
+        <% } else{ %>
+<option label="<%= auther.name %>" value="<%= auther.id %>">
+    <% } %>
+    <% }) %>
+</select>
+</div><br>
+<div>
+    <label>Publish Date</label>
+<input type="date" name="publishDate" value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
+</div><br>
+<div>
+<label>Page Count</label>
+<input type="number" name="pageCount" min="1" value=" <%= book.pageCount %>">
+</div><br>
+<div>
+<label>Cover</label>
+<input type="file" multiple name="coverImage">
+</div><br>
+<div>
+    <label>Description</label>
+    <textarea name="description" rows="3" cols="10"><% book.description %></textarea>
+    </div><br>

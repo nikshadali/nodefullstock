@@ -1,0 +1,19 @@
+<h2>Search Book</h2>
+<form action="/book" method="GET" enctype="multipart/form-data">
+    <div><label>Title</label>
+        <input type="text" name="title" value="<%= serachOption.title ? 'serachOption' : '' %>">
+    </div>
+    <div><label>Publish After</label>
+        <input type="date" name="publishedAfter" value="<%= serachOption.publishedAfter ? 'serachOption' : '' %>">
+    </div>
+    <div><label>Publish Before</label>
+        <input type="date" name="publishedBefore" value="<%= serachOption.publishedBefore ? 'serachOption' : '' %>">
+    </div>
+    
+    <button type="submit">Search</button>
+</form>
+<div>
+<% books.forEach(book => { %>
+    <img height="150" width="100" src="<%= book.coverImagePath %>">
+    <% }) %>
+</div>
